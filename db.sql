@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS `athlete_trainer`;
 SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE `Athlete` (
-    `athlete_id` INTEGER NOT NULL,
+    `athlete_id` INTEGER NOT NULL AUTO_INCREMENT,
     `athlete_name` VARCHAR(30) NOT NULL,
     `athlete_lastname` VARCHAR(30) NOT NULL,
     `pass_hash` VARCHAR(300) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE `Athlete` (
 );
 
 CREATE TABLE `Trainer` (
-    `trainer_id` INTEGER NOT NULL,
+    `trainer_id` INTEGER NOT NULL AUTO_INCREMENT,
     `trainer_name` VARCHAR(30) NOT NULL,
     `trainer_lastname` VARCHAR(30) NOT NULL,
     `pass_hash` VARCHAR(300) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE `Trainer` (
 );
 
 CREATE TABLE `PlannedActivity` (
-    `activity_id` INTEGER NOT NULL,
+    `activity_id` INTEGER NOT NULL AUTO_INCREMENT,
     `activity_name` VARCHAR(30) NOT NULL,
     `activity_description` VARCHAR(80),
     `activity_date` DATE,
@@ -36,7 +36,7 @@ CREATE TABLE `PlannedActivity` (
 );
 
 CREATE TABLE `Activity` (
-    `activity_id` INTEGER NOT NULL,
+    `activity_id` INTEGER NOT NULL AUTO_INCREMENT,
     `activity_name` VARCHAR(30) NOT NULL,
     `activity_description` VARCHAR(80),
     `activity_location` POINT,
