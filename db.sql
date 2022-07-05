@@ -12,7 +12,7 @@ CREATE TABLE `Athlete` (
     `athlete_name` VARCHAR(30) NOT NULL,
     `athlete_lastname` VARCHAR(30) NOT NULL,
     `pass_hash` VARCHAR(300) NOT NULL,
-    `athlete_salt` VARCHAR(10) NOT NULL,
+    `athlete_salt` VARCHAR(10),
     PRIMARY KEY (`athlete_id`)
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE `Trainer` (
     `trainer_name` VARCHAR(30) NOT NULL,
     `trainer_lastname` VARCHAR(30) NOT NULL,
     `pass_hash` VARCHAR(300) NOT NULL,
-    `trainer_salt` VARCHAR(10) NOT NULL,
+    `trainer_salt` VARCHAR(10),
     PRIMARY KEY (`trainer_id`)
 );
 
@@ -33,22 +33,30 @@ CREATE TABLE `PlannedActivity` (
     `time_of_day` VARCHAR(1),
     `activity_img` BLOB,
     `athlete_id` INTEGER NOT NULL,
-    `duration` TIMESTAMP NOT NULL,
     `sport_id` INTEGER NOT NULL,
+    `planned_L1` DOUBLE NOT NULL,
+    `planned_L2` DOUBLE NOT NULL,
+    `planned_L3` DOUBLE NOT NULL,
+    `planned_L4` DOUBLE NOT NULL,
+    `planned_L5` DOUBLE NOT NULL,
     PRIMARY KEY (`activity_id`)
 );
 
 CREATE TABLE `Activity` (
     `activity_id` INTEGER NOT NULL AUTO_INCREMENT,
     `activity_name` VARCHAR(30) NOT NULL,
+    `start_time` DATETIME NOT NULL,
     `activity_description` VARCHAR(80),
-    `activity_time` DATETIME NOT NULL,
-    `athlete_id` INTEGER NOT NULL,
-    `duration` TIMESTAMP NOT NULL,
     `distance` DOUBLE,
-    `sport_id` INTEGER NOT NULL,
     `elevation` INTEGER,
     `avg_velocity` VARCHAR(10),
+    `athlete_id` INTEGER NOT NULL,
+    `sport_id` INTEGER NOT NULL,
+    `L1` DOUBLE NOT NULL,
+    `L2` DOUBLE NOT NULL,
+    `L3` DOUBLE NOT NULL,
+    `L4` DOUBLE NOT NULL,
+    `L5` DOUBLE NOT NULL,
     PRIMARY KEY (`activity_id`)
 );
 
