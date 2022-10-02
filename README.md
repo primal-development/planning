@@ -75,6 +75,7 @@ planning stuff goes in here
     - core/back
     - legs
     - shoulders/arms
- - add a group for bulk assigning planned activities
- - view an athletes activities
- - view an athletes stats
+- add a group for bulk assigning planned activities
+- view an athletes activities
+- view an athletes stats
+- *make a presence list of athletes*
