@@ -2,7 +2,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `Athlete`;
 DROP TABLE IF EXISTS `PlannedActivity`;
 DROP TABLE IF EXISTS `Activity`;
-DROP TABLE IF EXISTS `group`;
+DROP TABLE IF EXISTS `Groups`;
 DROP TABLE IF EXISTS `Sport`;
 DROP TABLE IF EXISTS `athlete_plannedActivity`;
 DROP TABLE IF EXISTS `presences`;
@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS `group_athlete`;
 SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE `Athlete` (
-    `athlete_id` INTEGER NOT NULL,
+    `athlete_id` INTEGER NOT NULL AUTO_INCREMENT,
     `athlete_name` VARCHAR(30) NOT NULL,
     `athlete_lastname` VARCHAR(30) NOT NULL,
     `email_address` VARCHAR(30) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE `Athlete` (
 );
 
 CREATE TABLE `PlannedActivity` (
-    `activity_id` INTEGER NOT NULL,
+    `activity_id` INTEGER NOT NULL AUTO_INCREMENT,
     `activity_name` VARCHAR(30) NOT NULL,
     `duration` TIME NOT NULL,
     `activity_description` VARCHAR(80),
@@ -42,7 +42,7 @@ CREATE TABLE `PlannedActivity` (
 );
 
 CREATE TABLE `Activity` (
-    `activity_id` INTEGER NOT NULL,
+    `activity_id` INTEGER NOT NULL AUTO_INCREMENT,
     `activity_name` VARCHAR(30) NOT NULL,
     `start_time` DATETIME NOT NULL,
     `duration` TIME NOT NULL,
@@ -65,15 +65,16 @@ CREATE TABLE `Activity` (
     PRIMARY KEY (`activity_id`)
 );
 
-CREATE TABLE `group` (
-    `group_id` INTEGER NOT NULL,
+CREATE TABLE `Groups` (
+    `group_id` INTEGER NOT NULL AUTO_INCREMENT,
     `group_name` VARCHAR(30) NOT NULL,
     `trainer_id` INTEGER NOT NULL,
     PRIMARY KEY (`group_id`)
 );
 
+
 CREATE TABLE `Sport` (
-    `sport_id` INTEGER NOT NULL,
+    `sport_id` INTEGER NOT NULL AUTO_INCREMENT,
     `sport_name` VARCHAR(30) NOT NULL,
     PRIMARY KEY (`sport_id`),
     UNIQUE (`sport_name`)
@@ -100,10 +101,10 @@ CREATE TABLE `group_athlete` (
 ALTER TABLE `PlannedActivity` ADD FOREIGN KEY (`sport_id`) REFERENCES `Sport`(`sport_id`);
 ALTER TABLE `Activity` ADD FOREIGN KEY (`athlete_id`) REFERENCES `Athlete`(`athlete_id`);
 ALTER TABLE `Activity` ADD FOREIGN KEY (`sport_id`) REFERENCES `Sport`(`sport_id`);
-ALTER TABLE `group` ADD FOREIGN KEY (`trainer_id`) REFERENCES `Athlete`(`athlete_id`);
+ALTER TABLE `Groups` ADD FOREIGN KEY (`trainer_id`) REFERENCES `Athlete`(`athlete_id`);
 ALTER TABLE `athlete_plannedActivity` ADD FOREIGN KEY (`athlete_id`) REFERENCES `Athlete`(`athlete_id`);
 ALTER TABLE `athlete_plannedActivity` ADD FOREIGN KEY (`activity_id`) REFERENCES `PlannedActivity`(`activity_id`);
 ALTER TABLE `presences` ADD FOREIGN KEY (`athlete_id`) REFERENCES `Athlete`(`athlete_id`);
 ALTER TABLE `presences` ADD FOREIGN KEY (`activity_id`) REFERENCES `PlannedActivity`(`activity_id`);
 ALTER TABLE `group_athlete` ADD FOREIGN KEY (`athlete_id`) REFERENCES `Athlete`(`athlete_id`);
-ALTER TABLE `group_athlete` ADD FOREIGN KEY (`group_id`) REFERENCES `group`(`group_id`);
+ALTER TABLE `group_athlete` ADD FOREIGN KEY (`group_id`) REFERENCES `Groups`(`group_id`);

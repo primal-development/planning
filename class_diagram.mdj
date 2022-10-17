@@ -943,7 +943,7 @@
 									"top": 373,
 									"width": 234.166015625,
 									"height": 13,
-									"text": "group"
+									"text": "Groups"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -1698,7 +1698,7 @@
 										"$ref": "AAAAAAGD5Q1FtX6MJsg="
 									},
 									"font": "Arial;13;1",
-									"left": 688,
+									"left": 680,
 									"top": 221,
 									"width": 187.46630859375,
 									"height": 13,
@@ -1724,7 +1724,7 @@
 												"$ref": "AAAAAAGD5Q+UTH6sxfw="
 											},
 											"font": "Arial;13;0",
-											"left": 693,
+											"left": 685,
 											"top": 244,
 											"width": 177.46630859375,
 											"height": 13
@@ -1739,21 +1739,21 @@
 												"$ref": "AAAAAAGD5Q/PDn6zPv0="
 											},
 											"font": "Arial;13;0",
-											"left": 693,
+											"left": 685,
 											"top": 259,
 											"width": 177.46630859375,
 											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 688,
+									"left": 680,
 									"top": 239,
 									"width": 187.46630859375,
 									"height": 38
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 688,
+							"left": 680,
 							"top": 216,
 							"width": 187.46630859375,
 							"height": 61,
@@ -2714,7 +2714,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGBw3q7L18z67g="
 					},
-					"name": "group",
+					"name": "Groups",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
